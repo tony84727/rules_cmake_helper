@@ -1,0 +1,4 @@
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+# gazelle:prefix github.com/tony84727/rules_cmake_helper
+gazelle(name = "gazelle")

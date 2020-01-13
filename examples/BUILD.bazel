@@ -1,0 +1,16 @@
+load("@rules_cmake_helper//:defs.bzl", "expand_configure")
+
+expand_configure(
+    name = "config_header",
+    template = "config.h.in",
+    out = "config.h",
+    variables = {
+        "HAVE_A": "1",
+        "HAVE_B": "0",
+    },
+)
+
+cc_binary(
+    name = "main",
+    srcs = ["config.h","main.cc"],
+)
